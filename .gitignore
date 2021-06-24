@@ -23,4 +23,4 @@ pnpm-debug.log*
 *.sw?
 
 # Constants 
-contstants.js
+constants.js
