@@ -18,6 +18,7 @@
       SearchBar,
       Cards,
     },
+    created() {},
   };
 </script>
 

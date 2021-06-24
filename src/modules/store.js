@@ -7,13 +7,25 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 
     state: {
-        test: 'bla bla'
+        searchValue: ''
     },
     mutations: {
-
+        setSearchValue(state, value) {
+            state.searchValue = value
+        }
     },
     actions: {
 
+        setSearchValue({ commit }, value) {
+
+            commit('setSearchValue', value)
+        },
+        submitSearch(value) {
+            console.log(value);
+            Vue.axios.get('api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={API key}').then((response) => {
+                console.log(response.data)
+            })
+        }
     },
     getters: {
 
