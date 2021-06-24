@@ -1,3 +1,3 @@
-const OPEN_WEATHER_API_KEY = 'bc1da18cf1a8184ec567030b5e3d8ff1';
+const OPEN_WEATHER_API_KEY = 'bc1da18cf1a8184ec567030b5e3d8ff1fake';
 
 export { OPEN_WEATHER_API_KEY }
