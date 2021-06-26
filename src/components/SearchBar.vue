@@ -1,23 +1,21 @@
 <template>
-  <div>
-    <v-container id="searchBarWrapper">
-      <v-row class="justify-center align-center">
-        <v-col cols="12" sm="8" md="6">
-          <v-expand-transition>
-            <v-text-field
-              v-model="searchValue"
-              @keyup="handleSubmit"
-              label="Search"
-              placeholder="Seach for weather"
-              filled
-              rounded
-              dense
-            ></v-text-field>
-          </v-expand-transition>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-container id="searchBarWrapper">
+    <v-row class="justify-center align-center p-0">
+      <v-col cols="12" sm="8" md="6">
+        <v-expand-transition>
+          <v-text-field
+            v-model="searchValue"
+            @keyup="handleSubmit"
+            label="Search"
+            placeholder="Seach for weather"
+            filled
+            rounded
+            dense
+          ></v-text-field>
+        </v-expand-transition>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
   export default {
@@ -48,8 +46,7 @@
 </script>
 <style>
   #searchBarWrapper {
-    min-height: 40vh;
-    padding: 2rem;
+    margin-top: 10vh;
 
     background-color: transparent;
     display: flex;
