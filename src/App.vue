@@ -42,8 +42,9 @@
     color: #2c3e50;
     background-size: cover;
     background-color: #92b824;
-    background-image: url("./assets/images/hill_green.jpg");
-  }
-  body {
+    background-image: url("./assets/images/sunset1.jpg");
+    background-position: 50%;
+    height: 100%;
+    width: 100%;
   }
 </style>

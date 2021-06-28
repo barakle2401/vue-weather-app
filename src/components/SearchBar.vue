@@ -7,10 +7,11 @@
             v-model="searchValue"
             @keyup="handleSubmit"
             label="Search"
-            placeholder="Seach for weather"
+            placeholder="Enter a city"
             filled
             rounded
             dense
+            class="search-input"
           ></v-text-field>
         </v-expand-transition>
       </v-col>
@@ -33,6 +34,7 @@
         },
       },
     },
+
     methods: {
       handleSubmit(e) {
         if (e.keyCode === 13) {
@@ -47,10 +49,12 @@
 <style>
   #searchBarWrapper {
     margin-top: 10vh;
-
     background-color: transparent;
     display: flex;
-
     align-items: center;
+  }
+  .v-input__slot {
+    background-color: rgba(255, 255, 255, 0.651) !important;
+    font-size: 1.2rem !important;
   }
 </style>
