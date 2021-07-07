@@ -1,15 +1,7 @@
 <template>
-  <v-container>
-    <v-row align-content="center" justify="center">
-      <v-col cols="6">
-        <v-progress-linear
-          color="green accent-3"
-          indeterminate
-          rounded
-        ></v-progress-linear>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-overlay opacity="0.4">
+    <v-progress-circular indeterminate size="64"></v-progress-circular>
+  </v-overlay>
 </template>
 <script>
   export default {

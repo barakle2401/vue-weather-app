@@ -1,27 +1,34 @@
-
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { OPEN_WEATHER_API_KEY } from "../common/constants"
 import axios from 'axios'
+import { capitalEveryFirstLetter } from "../common/functions"
 Vue.use(Vuex)
 const store = new Vuex.Store({
 
     state: {
         searchValue: '',
         currentWeather: {},
-        forecast: [],
-        loading: false
+        forecast: {},
+        loading: false,
+        dataExist: false
     },
     mutations: {
-        setSearchValue(state, value) {
-            state.searchValue = value
+        setSearchValue(state, city) {
+            state.searchValue = capitalEveryFirstLetter(city)
         },
-        setApiResponse(state, response) {
-            state.currentWeather = response.weather;
-            state.forecast = response.forecast;
+        setForecast(state, forecast) {
+
+            state.forecast = forecast;
+        },
+        setCurrentWeather(state, weather) {
+            state.currentWeather = weather;
         },
         setLoading(state, payload) {
             state.loading = payload
+        },
+        setDataExist(state, payload) {
+            state.dataExist = payload
         }
     },
     actions: {
@@ -40,21 +47,28 @@ const store = new Vuex.Store({
 
                     const weather = responses[0].data;
                     const forecast = responses[1].data;
-                    commit('setApiResponse', { weather, forecast });
+                    commit('setForecast', forecast);
+                    commit('setCurrentWeather', weather);
+                    commit('setDataExist', true)
 
                 }))
                 .catch(function (res) {
-                    console.log(res.message);
+
                     alert(res.message)
-                    commit('setApiResponse', {});
+
+                    commit('setDataExist', false)
                 })
                 .finally(() => {
                     commit('setLoading', false)
+
                 })
         }
     },
     getters: {
 
+        searchValue: state => {
+            return state.searchValue
+        },
         forecast: state => {
 
             return state.forecast.list

@@ -1,15 +1,17 @@
 <template>
-  <v-col cols="12" md="3">
-    <v-card class="mx-auto">
+  <v-col cols="6" md="3">
+    <div class="mx-auto weather-card ">
       <v-list-item two-line>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
+        <v-list-item-content class="text-left  white--text">
+          <v-list-item-title class="text-h5  font-weight-light">
             {{ date[0] }}
           </v-list-item-title>
-          <v-list-item-title class="text-h7">
+          <v-list-item-title class="text-h6 font-weight-light">
             {{ date[1] }}
           </v-list-item-title>
-          <v-list-item-subtitle>{{ weatherDescription }}</v-list-item-subtitle>
+          <v-list-item-subtitle class="text-h6 font-weight-light white--text">{{
+            weatherDescription
+          }}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
@@ -24,7 +26,7 @@
         <span class="mr-2 text--light-green">Feels Like</span>
         <span>25 &deg; C</span>
       </div>
-    </v-card>
+    </div>
   </v-col>
 </template>
 <script>
@@ -60,4 +62,12 @@
     created() {},
   };
 </script>
-<style scoped></style>
+<style scoped>
+  .weather-card {
+    background-color: rgba(46, 43, 43, 0.233);
+    border: 1px solid rgba(240, 240, 240, 0.281);
+    box-shadow: 2px 2px 2px rgba(231, 141, 38, 0.233);
+    border-radius: 10px;
+    color: whitesmoke;
+  }
+</style>
