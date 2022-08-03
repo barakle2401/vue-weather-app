@@ -1,5 +1,5 @@
 # Vue Weather App 
-A small web app to help us decide where to travel, built with [Vue.js](https://vuejs.org/), [Vuex](https://vuex.vuejs.org/), and [Vuetify](https://vuetifyjs.com/en/styles/flex/#flex-align-content)
+A small web app that using a debounced search engine, to display current weather and forecast, built with [Vue.js](https://vuejs.org/), [Vuex](https://vuex.vuejs.org/), and [Vuetify](https://vuetifyjs.com/en/styles/flex/#flex-align-content)
 
 As part of my current job interview process, I developed this beutiful weather app as a home task 
 
